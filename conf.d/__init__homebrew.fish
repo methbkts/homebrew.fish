@@ -21,6 +21,9 @@ if test $HOMEBREW_OWNER != (whoami)
     end
 end
 
+# Ensure manpath is set to something so we can add to it.
+set -q MANPATH || set -gx MANPATH ''
+
 # Add keg-only apps
 set -q HOMEBREW_KEG_ONLY_APPS || set -U HOMEBREW_KEG_ONLY_APPS ruby curl sqlite
 for app in $HOMEBREW_KEG_ONLY_APPS
