@@ -30,5 +30,10 @@ for app in $HOMEBREW_KEG_ONLY_APPS
     end
 end
 
+# Add fish completions
+if test -e "$HOMEBREW_PREFIX/share/fish/completions"
+    set --append fish_complete_path "$HOMEBREW_PREFIX/share/fish/completions"
+end
+
 # Other homebrew vars.
 set -q HOMEBREW_NO_ANALYTICS || set -gx HOMEBREW_NO_ANALYTICS 1
