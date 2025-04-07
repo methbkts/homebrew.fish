@@ -1,5 +1,5 @@
 function brews --description "Show brewed formulae"
-    set -l formulae (brew leaves | xargs brew deps --installed --for-each)
+    set -l formulae (brew leaves | xargs brew deps --formula --installed --for-each)
     set -l casks (brew list --cask 2>/dev/null)
 
     echo (set_color blue)"==>"(set_color --bold normal)" Formulae"(set_color normal)
